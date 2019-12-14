@@ -30,3 +30,10 @@ test('test return meme valeur d entree', () => {
 test('test return meme valeur d entree', () => {
     expect(functions.checkValue(2)).toBeTruthy();
 });
+
+test('User doit etre Hamza BH object', () => {
+    expect(functions.createUser()).toStrictEqual({
+        firstName: 'Hamza',
+        lastName: 'BH'
+    });
+});
