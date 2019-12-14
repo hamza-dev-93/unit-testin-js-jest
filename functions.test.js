@@ -31,9 +31,28 @@ test('test return meme valeur d entree', () => {
     expect(functions.checkValue(2)).toBeTruthy();
 });
 
+// toEqual
 test('User doit etre Hamza BH object', () => {
     expect(functions.createUser()).toStrictEqual({
         firstName: 'Hamza',
         lastName: 'BH'
     });
 });
+
+// less than and graeter than
+test('Test doit etre under 1600', () => {
+    const load1 = 800;
+    const load2 = 800;
+    expect(load1 + load2).toBeLessThanOrEqual(1600);
+})
+
+// Regex with i sensative lettre
+test('il n ya pas la lettre P dans le mot France', () => {
+    expect('france').not.toMatch(/P/i);
+});
+
+// array verification si nom exist dans array
+test('Tester si  hamza exist dans array', () => {
+    usernames = ['ahmed', 'amin', 'haroun'];
+    expect(usernames).toContain('amin');
+})
