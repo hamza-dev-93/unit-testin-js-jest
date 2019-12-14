@@ -58,10 +58,18 @@ test('Tester si  hamza exist dans array', () => {
 })
 
 // tester avec async data (jsonplaceholder)
-test('Fetch user name doit etre leanne graham', () => {
+// Promise
+test('Fetch user name doit etre leanne graham avec la fonction assertion(1) et then', () => {
     expect.assertions(1);
     return functions.fetchUser()
                     .then(data => {
                         expect(data.name).toEqual('Leanne Graham');
-                    })
-})
+                    });
+});
+
+// Async Await
+test('Fetch user name doit etre leanne grahamavec la methode async await ', async () => {
+    expect.assertions(1);
+    const data = await functions.fetchUser();
+    expect(data.name).toEqual('Leanne Graham');
+});
