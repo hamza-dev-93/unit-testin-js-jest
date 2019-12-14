@@ -18,3 +18,15 @@ test('Adds 2 + 3 to NOT equal', () => {
 test('test return Null', () => {
     expect(functions.isNull()).toBeNull();
 });
+
+test('test return Undefined', () => {
+    expect(functions.isUndefined()).toBeUndefined();
+});
+
+test('test return meme valeur d entree', () => {
+    expect(functions.checkValue(0)).toBeFalsy();
+});
+
+test('test return meme valeur d entree', () => {
+    expect(functions.checkValue(2)).toBeTruthy();
+});
