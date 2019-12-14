@@ -56,3 +56,12 @@ test('Tester si  hamza exist dans array', () => {
     usernames = ['ahmed', 'amin', 'haroun'];
     expect(usernames).toContain('amin');
 })
+
+// tester avec async data (jsonplaceholder)
+test('Fetch user name doit etre leanne graham', () => {
+    expect.assertions(1);
+    return functions.fetchUser()
+                    .then(data => {
+                        expect(data.name).toEqual('Leanne Graham');
+                    })
+})
